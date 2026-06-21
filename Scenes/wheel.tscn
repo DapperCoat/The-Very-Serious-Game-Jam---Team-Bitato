@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bia2je5asj3bf"]
 
 [ext_resource type="Script" uid="uid://dfdirjlkbo16w" path="res://Scripts/wheel.gd" id="1_u5up5"]
-[ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="2_jc6qf"]
+[ext_resource type="Texture2D" uid="uid://dg3lmt5qyh82l" path="res://Assets/placeholderWheelImage.png" id="2_u5up5"]
 
 [node name="Wheel" type="Node2D" unique_id=2135891266]
 script = ExtResource("1_u5up5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1230535729]
-texture = ExtResource("2_jc6qf")
+scale = Vector2(0.884, 0.884)
+texture = ExtResource("2_u5up5")
