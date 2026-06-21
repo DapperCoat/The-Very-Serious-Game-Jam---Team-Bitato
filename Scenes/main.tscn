@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://d32ui5lqyhbhx"]
 
+[ext_resource type="PackedScene" uid="uid://dmap0kqdnl13c" path="res://Scenes/rouletteWheel.tscn" id="1_jjgbg"]
+
 [node name="Main" type="Node" unique_id=2143824367]
+
+[node name="Roulette Wheel" parent="." unique_id=540705528 instance=ExtResource("1_jjgbg")]
+position = Vector2(575, 312)
