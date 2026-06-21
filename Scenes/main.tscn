@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://o8a51ma370m"]
 
+[ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="1_jjgbg"]
+
 [node name="Main" type="Node" unique_id=2143824367]
+
+[node name="Wheel" parent="." unique_id=2135891266 instance=ExtResource("1_jjgbg")]
+position = Vector2(564, 359)
