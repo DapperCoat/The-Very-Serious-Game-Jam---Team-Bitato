@@ -5,13 +5,16 @@ const CHIP_MULTI: float = 1.35
 # Amount of chips player has
 var player_chips: int = 10
 # Chip number to match or beat
-var chips_to_beat: int
+var chips_to_beat: int = 15
 # chips bet
-var chips_bet: int
+var chips_bet: int = 0
 
-func place_bet(bet: int) -> void:
-	chips_bet = bet
-	player_chips -= bet
+func set_bet(bet: int) -> void:
+	if bet <= player_chips:
+		chips_bet = bet
+		player_chips -= bet
+	else:
+		print("bet is too large")
 
 # called by outside script when bet state is gotten after spin
 func update_chips(bet_won: bool, multi = CHIP_MULTI) -> void:
