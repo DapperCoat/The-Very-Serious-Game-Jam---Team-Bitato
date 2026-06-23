@@ -1,6 +1,7 @@
 extends Control
 # Reference to chip_manager 
 @export var chip_manager: Node
+@export var roulette_wheel: Node2D
 @onready var bet_display = $BetDisplay
 @onready var button_cont = $ButtonCont
 # String is just a placeholder, will have to see how it interacts with wheel & other systems
@@ -20,6 +21,7 @@ func bet_state_clear() -> void:
 #used for quickly changing if buttons are enabled the bet state
 func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
 	bet_state = new_bet_state
+	print(bet_state)
 	for child in button_cont.get_children():
 		child.disabled = is_disabled
 
