@@ -70,7 +70,7 @@ func _process(_delta: float) -> void:
 			
 			ball_ang_speed *= 0.99
 			
-			if ball_ang_speed < 5 and orbit_radius > inner_radius:
+			if ball_ang_speed < 3 and orbit_radius > inner_radius:
 				orbit_radius *= 0.995
 				
 			if ball_ang_speed < 0.1:

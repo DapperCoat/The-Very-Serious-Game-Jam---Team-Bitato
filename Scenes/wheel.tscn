@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dfdirjlkbo16w" path="res://Scripts/wheel.gd" id="1_u5up5"]
 [ext_resource type="Texture2D" uid="uid://dg3lmt5qyh82l" path="res://Assets/placeholderWheelImage.png" id="2_u5up5"]
 [ext_resource type="Texture2D" uid="uid://y1o3aob1vj7y" path="res://Assets/ball.png" id="3_lshy5"]
-[ext_resource type="Script" uid="uid://cc3tp68m84j1" path="res://Scenes/ball.gd" id="4_eexu6"]
 
 [node name="Roulette" type="Node2D" unique_id=2135891266]
 script = ExtResource("1_u5up5")
@@ -17,6 +16,3 @@ texture = ExtResource("2_u5up5")
 position = Vector2(72, 168)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_lshy5")
-script = ExtResource("4_eexu6")
-orbit_radius = 185.0
-ang_speed = 15.0
