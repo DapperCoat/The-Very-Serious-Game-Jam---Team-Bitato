@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dmap0kqdnl13c"]
+
+[ext_resource type="Script" uid="uid://cfja33p0w05rv" path="res://Scripts/rouletteWheel.gd" id="1_pj0ng"]
+[ext_resource type="Texture2D" uid="uid://tbehtgrolab6" path="res://Assets/placeholderWheelImage.png" id="1_xnro3"]
+[ext_resource type="Script" uid="uid://ea2vshorvte2" path="res://addons/donut_collision_polygon2D/donut_collision_polygon2D.gd" id="3_hj107"]
+
+[node name="Roulette Wheel" type="Node2D" unique_id=540705528]
+script = ExtResource("1_pj0ng")
+metadata/_edit_group_ = true
+
+[node name="Placeholder Sprite" type="Sprite2D" parent="." unique_id=271961873]
+position = Vector2(-1.1563301e-05, 0)
+scale = Vector2(0.9837499, 1.0036639)
+texture = ExtResource("1_xnro3")
+
+[node name="Wheel Area" type="Area2D" parent="." unique_id=1125316649]
+
+[node name="DonutCollisionPolygon2D" type="CollisionPolygon2D" parent="Wheel Area" unique_id=1610996631]
+scale = Vector2(23.323391, 23.323391)
+polygon = PackedVector2Array(7.347638e-16, -12, 2.341084, -11.769423, 4.592201, -11.086554, 6.666843, -9.977635, 8.485281, -8.485281, 9.977635, -6.666843, 11.086554, -4.592201, 11.769423, -2.341084, 12, 0, 11.769423, 2.341084, 11.086554, 4.592201, 9.977635, 6.666843, 8.485281, 8.485281, 6.666843, 9.977635, 4.592201, 11.086554, 2.341084, 11.769423, 7.347638e-16, 12, -2.341084, 11.769423, -4.592201, 11.086554, -6.666843, 9.977635, -8.485281, 8.485281, -9.977635, 6.666843, -11.086554, 4.592201, -11.769423, 2.341084, -12, 1.4695276e-15, -11.769423, -2.341084, -11.086554, -4.592201, -9.977635, -6.666843, -8.485281, -8.485281, -6.666843, -9.977635, -4.592201, -11.086554, -2.341084, -11.769423, -2.2042914e-15, -12, -1.4695276e-15, -8, -1.5607226, -7.846282, -3.0614674, -7.391036, -4.444562, -6.651757, -5.656854, -5.656854, -6.651757, -4.444562, -7.391036, -3.0614674, -7.846282, -1.5607226, -8, 9.796851e-16, -7.846282, 1.5607226, -7.391036, 3.0614674, -6.651757, 4.444562, -5.656854, 5.656854, -4.444562, 6.651757, -3.0614674, 7.391036, -1.5607226, 7.846282, 4.8984254e-16, 8, 1.5607226, 7.846282, 3.0614674, 7.391036, 4.444562, 6.651757, 5.656854, 5.656854, 6.651757, 4.444562, 7.391036, 3.0614674, 7.846282, 1.5607226, 8, 0, 7.846282, -1.5607226, 7.391036, -3.0614674, 6.651757, -4.444562, 5.656854, -5.656854, 4.444562, -6.651757, 3.0614674, -7.391036, 1.5607226, -7.846282, 4.8984254e-16, -8, 0.0001, -11.9999)
+script = ExtResource("3_hj107")
+width = 4.0
+metadata/_custom_type_script = "uid://ea2vshorvte2"
+
+[node name="Mouse Grab Time Limit" type="Timer" parent="." unique_id=1716637055]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="mouse_entered" from="Wheel Area" to="." method="_on_wheel_area_mouse_entered"]
+[connection signal="mouse_exited" from="Wheel Area" to="." method="_on_wheel_area_mouse_exited"]
+[connection signal="timeout" from="Mouse Grab Time Limit" to="." method="_on_mouse_grab_time_limit_timeout"]
