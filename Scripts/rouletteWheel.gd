@@ -68,7 +68,7 @@ func _process(delta):
 		sprite.rotation += power * flyDecay
 		flyDecay *= flyExponential
 		# obvious glaring bug I forgot to deal with last night
-		# it needs to unactivate this variable when the speed gets low enough
+		# it needs to deactivate this variable when the speed gets low enough
 		if power*flyDecay < 0.001: 
 			flyActive = false
 	
