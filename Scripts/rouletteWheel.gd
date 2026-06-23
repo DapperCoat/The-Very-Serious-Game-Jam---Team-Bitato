@@ -67,6 +67,10 @@ func _process(delta):
 	if flyActive:
 		sprite.rotation += power * flyDecay
 		flyDecay *= flyExponential
+		# obvious glaring bug I forgot to deal with last night
+		# it needs to unactivate this variable when the speed gets low enough
+		if power*flyDecay < 0.001: 
+			flyActive = false
 	
 func _on_wheel_area_mouse_entered():
 	mouseInArea = true
