@@ -7,7 +7,6 @@
 
 [node name="Roulette" type="Node2D" unique_id=2135891266]
 script = ExtResource("1_u5up5")
-num_segments = 37
 
 [node name="Wheel" type="Sprite2D" parent="." unique_id=1230535729]
 scale = Vector2(0.884, 0.884)
@@ -20,3 +19,5 @@ texture = ExtResource("3_lshy5")
 script = ExtResource("4_eexu6")
 orbit_radius = 185.0
 ang_speed = 15.0
+
+[connection signal="stopping" from="." to="Ball" method="_on_wheel_stopping"]

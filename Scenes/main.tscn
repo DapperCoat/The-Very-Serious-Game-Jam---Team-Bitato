@@ -1,19 +1,13 @@
 [gd_scene format=3 uid="uid://o8a51ma370m"]
 
-[ext_resource type="Script" uid="uid://bomomg1soavjd" path="res://Scenes/main.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://bomomg1soavjd" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="3_8gbba"]
 
 [node name="Main" type="Node" unique_id=2143824367]
 script = ExtResource("1_bo1nx")
 
 [node name="Wheel" parent="." unique_id=2135891266 instance=ExtResource("1_jjgbg")]
 position = Vector2(576, 312)
-
-[node name="Ball" type="Sprite2D" parent="." unique_id=1207407701]
-position = Vector2(576.00006, 168)
-scale = Vector2(0.1250002, 0.12499999)
-texture = ExtResource("3_8gbba")
 
 [node name="UI" type="Control" parent="." unique_id=1460115981]
 layout_mode = 3
