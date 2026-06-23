@@ -2,7 +2,7 @@ extends Control
 # Reference to chip_manager 
 @export var chip_manager: Node
 @export var roulette_wheel: Node2D
-@onready var bet_display = $BetDisplay
+@onready var bet_display = $LabelCont/BetDisplay
 @onready var button_cont = $ButtonCont
 # String is just a placeholder, will have to see how it interacts with wheel & other systems
 var bet_state: String = "none"
