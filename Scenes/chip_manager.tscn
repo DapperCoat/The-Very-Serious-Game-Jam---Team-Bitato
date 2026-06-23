@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://d3itjlv44ewb2"]
-
-[ext_resource type="Script" uid="uid://sadl58f2x015" path="res://Scripts/chip_manager.gd" id="1_opa25"]
-
-[node name="ChipManager" type="Node" unique_id=718549349]
-script = ExtResource("1_opa25")

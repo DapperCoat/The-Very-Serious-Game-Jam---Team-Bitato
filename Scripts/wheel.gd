@@ -4,7 +4,7 @@ extends Node2D
 
 @export_category("Wheel")
 @export var num_segments: int = 34
-@export var outer_radius: float = 6400.0
+@export var outer_radius: float = 180.0
 @export var inner_radius: float = 140.0
 
 var ang_speed: float
@@ -35,8 +35,8 @@ func stop():
 func get_pocket(global_pos: Vector2) -> int:
 	var local = to_local(global_pos)
 
-	var angle = local.angle() - rotation
-
+	var angle = local.angle() 
+	
 	angle = fposmod(angle, TAU)
 
 	var segment_angle = TAU / num_segments
@@ -51,7 +51,8 @@ func _process(_delta: float) -> void:
 	match state:
 		
 		STATES.SPINNING:
-			pass
+			if ball_ang_speed > 3 and orbit_radius < outer_radius:
+				orbit_radius *= 1.05
 		
 		STATES.STOPPING:
 			# Wheel movement

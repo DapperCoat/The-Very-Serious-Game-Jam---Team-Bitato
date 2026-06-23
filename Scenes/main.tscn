@@ -8,6 +8,7 @@ script = ExtResource("1_bo1nx")
 
 [node name="Wheel" parent="." unique_id=2135891266 instance=ExtResource("1_jjgbg")]
 position = Vector2(576, 312)
+rotation = 2.6814141
 
 [node name="UI" type="Control" parent="." unique_id=1460115981]
 layout_mode = 3
