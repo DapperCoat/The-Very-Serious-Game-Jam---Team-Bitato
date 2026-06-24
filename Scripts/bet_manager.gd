@@ -21,37 +21,43 @@ func bet_state_clear() -> void:
 #used for quickly changing if buttons are enabled the bet state
 func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
 	bet_state = new_bet_state
-	print(bet_state)
 	for child in button_cont.get_children():
 		child.disabled = is_disabled
+		if child.button_pressed:
+			child.button_pressed = false
 
 # Buttons for selecting type of bet
 # Even Select 
 func _on_even_select_pressed() -> void:
-	if chip_manager.chips_bet != 0:
-		_set_button_disable(true, "even")
-		chip_manager.place_bet(potential_bet)
+	chip_manager.set_bet(potential_bet)
+	if potential_bet != 0:
 		send_bet_info.emit(bet_state, potential_bet)
+		print("even bet placed for " + str(potential_bet))
+		_set_button_disable(true, "even")
 
 # Red Select
 func _on_red_select_pressed() -> void:
-	if chip_manager.chips_bet != 0:
-		_set_button_disable(true, "red")
-		chip_manager.place_bet(potential_bet)
+	chip_manager.set_bet(potential_bet)
+	if potential_bet != 0:
 		send_bet_info.emit(bet_state, potential_bet)
+		print("red bet placed for " + str(potential_bet))
+		_set_button_disable(true, "red")
+
 # Black Select
 func _on_black_select_pressed() -> void:
-	if chip_manager.chips_bet != 0:
-		_set_button_disable(true, "black")
-		chip_manager.place_bet(potential_bet)
+	chip_manager.set_bet(potential_bet)
+	if potential_bet != 0:
 		send_bet_info.emit(bet_state, potential_bet)
+		print("black bet placed for" + str(potential_bet))
+		_set_button_disable(true, "black")
 
 # Odd Select
 func _on_odd_select_pressed() -> void:
-	if chip_manager.chips_bet != 0:
-		_set_button_disable(true, "odd")
-		chip_manager.place_bet(potential_bet)
+	chip_manager.set_bet(potential_bet)
+	if potential_bet != 0:
 		send_bet_info.emit(bet_state, potential_bet)
+		print("odd bet placed for " + str(potential_bet))
+		_set_button_disable(true, "odd")
 
 # removes from potential bet
 func _on_minus_button_pressed() -> void:
@@ -65,7 +71,7 @@ func _on_minus_button_pressed() -> void:
 # adds to potential bet
 func _on_plus_button_pressed() -> void:
 	#chip_manager.player_chips
-	if (potential_bet + 1) > 10:
+	if (potential_bet + 1) > chip_manager.player_chips:
 		print("cannot bet above available chips")
 	else:
 		potential_bet += 1
