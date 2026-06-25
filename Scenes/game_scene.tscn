@@ -1,27 +1,71 @@
 [gd_scene format=3 uid="uid://wxpfijodrk57"]
 
 [ext_resource type="PackedScene" uid="uid://cto4atnay10pd" path="res://Scenes/bet_manager.tscn" id="1_6h5vk"]
+[ext_resource type="Script" uid="uid://dt413y2no3li2" path="res://Scripts/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://d3itjlv44ewb2" path="res://Scenes/chip_manager.tscn" id="2_fiftr"]
 [ext_resource type="PackedScene" uid="uid://dmap0kqdnl13c" path="res://Scenes/rouletteWheel.tscn" id="3_1ixah"]
 
-[node name="GameScene" type="Node2D" unique_id=135266820]
+[sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
+font_size = 100
+
+[node name="GameScene" type="Node2D" unique_id=135266820 node_paths=PackedStringArray("chip_manager", "bet_manager")]
+script = ExtResource("1_fiftr")
+chip_manager = NodePath("ChipManager")
+bet_manager = NodePath("UI/BetManager")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1149891547]
 position = Vector2(0, 168)
 
 [node name="Roulette Wheel" parent="." unique_id=540705528 instance=ExtResource("3_1ixah")]
+position = Vector2(232, 0)
+scale = Vector2(1.2799982, 1.2799982)
 
-[node name="BetManager" parent="." unique_id=2033652603 node_paths=PackedStringArray("chip_manager", "roulette_wheel") instance=ExtResource("1_6h5vk")]
+[node name="ChipManager" parent="." unique_id=718549349 instance=ExtResource("2_fiftr")]
+
+[node name="UI" type="Control" parent="." unique_id=431137585]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BetManager" parent="UI" unique_id=2033652603 node_paths=PackedStringArray("chip_manager", "roulette_wheel") instance=ExtResource("1_6h5vk")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -560.0
-offset_top = 16.0
-offset_right = -560.0
-offset_bottom = 16.0
+offset_left = -328.0
+offset_top = 88.0
+offset_right = -328.0
+offset_bottom = 88.0
 grow_horizontal = 1
 grow_vertical = 1
-chip_manager = NodePath("../ChipManager")
-roulette_wheel = NodePath("../Roulette Wheel")
+chip_manager = NodePath("../../ChipManager")
+roulette_wheel = NodePath("../../Roulette Wheel")
 
-[node name="ChipManager" parent="." unique_id=718549349 instance=ExtResource("2_fiftr")]
+[node name="ChipsToBeatLabel" type="Label" parent="UI" unique_id=1160048790]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.400002
+anchor_top = -8.0
+anchor_right = -8.0
+anchor_bottom = -4.0
+offset_left = 6.1035156e-05
+text = "House: XXX"
+label_settings = SubResource("LabelSettings_11i6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerChips" type="Label" parent="UI" unique_id=2146253337]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.400002
+anchor_top = -3.4
+anchor_right = -8.0
+anchor_bottom = 0.6
+offset_left = 6.1035156e-05
+text = "Player: XXX"
+label_settings = SubResource("LabelSettings_11i6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="send_bet_info" from="UI/BetManager" to="." method="_on_bet_manager_send_bet_info"]

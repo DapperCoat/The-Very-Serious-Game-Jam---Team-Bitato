@@ -9,23 +9,28 @@ shadow_size = 0
 
 [node name="BetManager" type="Control" unique_id=2033652603]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.587
+anchor_bottom = 0.58500004
+offset_right = -3.484497
+offset_bottom = 0.19995117
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rubdl")
 
-[node name="BetDisplay" type="Label" parent="." unique_id=235305230]
+[node name="LabelCont" type="Control" parent="." unique_id=637163627]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BetDisplay" type="Label" parent="LabelCont" unique_id=235305230]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.012
-anchor_right = 1.0
-anchor_bottom = 0.98800004
-offset_left = 488.0
-offset_top = 456.224
-offset_right = -504.0
-offset_bottom = -56.224
+anchor_left = 12.200001
+anchor_top = 11.6
+anchor_right = 16.0
+anchor_bottom = 14.400001
+offset_left = -3.0517578e-05
+offset_bottom = -2.0
 text = "0"
 label_settings = SubResource("LabelSettings_rubdl")
 horizontal_alignment = 1
@@ -46,6 +51,7 @@ offset_left = 231.68
 offset_top = 278.68
 offset_right = 355.24
 offset_bottom = 398.64
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [node name="RedSelect" type="TextureButton" parent="ButtonCont" unique_id=1123435149]
@@ -60,6 +66,7 @@ offset_left = 395.76
 offset_top = 278.68
 offset_right = 519.32
 offset_bottom = 398.64
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [node name="BlackSelect" type="TextureButton" parent="ButtonCont" unique_id=1687352053]
@@ -74,6 +81,7 @@ offset_left = 561.0
 offset_top = 278.68
 offset_right = 684.4
 offset_bottom = 398.64
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [node name="OddSelect" type="TextureButton" parent="ButtonCont" unique_id=2046958531]
@@ -87,6 +95,7 @@ offset_left = 724.92
 offset_top = 278.68
 offset_right = 848.48
 offset_bottom = 398.64
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [node name="MinusButton" type="TextureButton" parent="ButtonCont" unique_id=1552625495]
@@ -95,6 +104,7 @@ offset_left = 344.0
 offset_top = 456.0
 offset_right = 472.0
 offset_bottom = 584.0
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [node name="PlusButton" type="TextureButton" parent="ButtonCont" unique_id=2096030945]
@@ -103,6 +113,7 @@ offset_left = 661.0
 offset_top = 456.0
 offset_right = 789.0
 offset_bottom = 584.0
+toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
 
 [connection signal="pressed" from="ButtonCont/EvenSelect" to="." method="_on_even_select_pressed"]
