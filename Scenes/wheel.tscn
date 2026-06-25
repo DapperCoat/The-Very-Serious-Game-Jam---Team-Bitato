@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bia2je5asj3bf"]
 
 [ext_resource type="Script" uid="uid://dfdirjlkbo16w" path="res://Scripts/wheel.gd" id="1_u5up5"]
-[ext_resource type="Texture2D" uid="uid://dg3lmt5qyh82l" path="res://Assets/placeholderWheelImage.png" id="2_u5up5"]
+[ext_resource type="Texture2D" uid="uid://cw8asdxul3eda" path="res://Assets/pirate_wheel3.png" id="2_jc6qf"]
 [ext_resource type="Texture2D" uid="uid://y1o3aob1vj7y" path="res://Assets/ball.png" id="3_lshy5"]
 
 [node name="Roulette" type="Node2D" unique_id=2135891266]
@@ -10,7 +10,7 @@ num_segments = 37
 
 [node name="Wheel" type="Sprite2D" parent="." unique_id=1230535729]
 scale = Vector2(0.884, 0.884)
-texture = ExtResource("2_u5up5")
+texture = ExtResource("2_jc6qf")
 
 [node name="Ball" type="Sprite2D" parent="." unique_id=515465882]
 position = Vector2(72, 168)

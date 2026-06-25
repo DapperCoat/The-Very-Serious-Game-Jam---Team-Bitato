@@ -34,12 +34,11 @@ func stop():
 # Check if a position is on the wheel and returns pocket	
 func get_pocket(global_pos: Vector2) -> int:
 	var local = to_local(global_pos)
-
+	
+	var segment_angle = TAU / num_segments
 	var angle = local.angle() 
 	
-	angle = fposmod(angle, TAU)
-
-	var segment_angle = TAU / num_segments
+	angle = fposmod(angle, TAU) 
 
 	return int(angle / segment_angle)
 	
