@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b04vo4jorgcd4"]
+
+[ext_resource type="Script" uid="uid://s3tjib4chvxc" path="res://Scripts/Balls/ball_multi_even_up.gd" id="1_d8fes"]
+
+[node name="BallMultEvenUp" type="Node" unique_id=1857092438]
+script = ExtResource("1_d8fes")
+upgrade_title = "Multi on Even"

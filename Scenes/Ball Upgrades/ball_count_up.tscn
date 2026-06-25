@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c2j5pnrmb3syg"]
+
+[ext_resource type="Script" uid="uid://dpl5wfxs3iaab" path="res://Scripts/Balls/ball_count_up.gd" id="1_pi7x8"]
+
+[node name="BallCountUp" type="Node" unique_id=8494893]
+script = ExtResource("1_pi7x8")
+upgrade_title = "Ball Count Up"

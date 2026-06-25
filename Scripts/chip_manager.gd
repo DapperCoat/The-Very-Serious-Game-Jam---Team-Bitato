@@ -17,9 +17,9 @@ func set_bet(bet: int) -> void:
 		print("bet is too large")
 
 # called by outside script when bet state is gotten after spin
-func update_chips(bet_won: bool, multi = CHIP_MULTI) -> void:
+func update_chips(bet_won: bool, multi: float) -> void:
 	if bet_won:
-		player_chips += round(chips_bet * multi)
+		player_chips += round(chips_bet * multi * CHIP_MULTI)
 	else:
 		chips_bet = 0
 
