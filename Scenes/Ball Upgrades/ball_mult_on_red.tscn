@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bavaq1b2o621h"]
+
+[ext_resource type="Script" uid="uid://3n6ggtfh8am0" path="res://Scripts/Balls/ball_multi_red_up.gd" id="1_l21o2"]
+
+[node name="BallMultOnRed" type="Node" unique_id=537658847]
+script = ExtResource("1_l21o2")
+upgrade_title = "Multi on Red"

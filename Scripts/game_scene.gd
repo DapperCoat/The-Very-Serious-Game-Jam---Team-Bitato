@@ -4,6 +4,7 @@ extends Node2D
 @export var bet_manager: Control
 @onready var house_score: Label = $UI/ChipsToBeatLabel
 @onready var player_score: Label = $UI/PlayerChips
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_update_scores()

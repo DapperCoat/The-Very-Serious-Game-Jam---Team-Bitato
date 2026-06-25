@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://0m0rumnd37or" path="res://Assets/ball.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://pv1v45glaa7d" path="res://Scripts/Balls/ball.gd" id="1_ij5cq"]
+[ext_resource type="PackedScene" uid="uid://c2j5pnrmb3syg" path="res://Scenes/Ball Upgrades/ball_count_up.tscn" id="3_hk63f"]
+[ext_resource type="PackedScene" uid="uid://cl5a8ijdkx5a7" path="res://Scenes/Ball Upgrades/ball_mult_black_up.tscn" id="4_vm4s8"]
+[ext_resource type="PackedScene" uid="uid://b04vo4jorgcd4" path="res://Scenes/Ball Upgrades/ball_mult_even_up.tscn" id="5_2b6yv"]
+[ext_resource type="PackedScene" uid="uid://dp1yn4we2vge5" path="res://Scenes/Ball Upgrades/ball_mult_on_odd.tscn" id="6_cx4d7"]
+[ext_resource type="PackedScene" uid="uid://bavaq1b2o621h" path="res://Scenes/Ball Upgrades/ball_mult_on_red.tscn" id="7_gejbx"]
+[ext_resource type="PackedScene" uid="uid://br2ygnayv8pot" path="res://Scenes/Ball Upgrades/ball_speed_up.tscn" id="8_o05bq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
 radius = 32.0
@@ -14,3 +20,17 @@ texture = ExtResource("1_d60mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=640344577]
 shape = SubResource("CircleShape2D_d60mj")
+
+[node name="UpgradeCont" type="Node" parent="." unique_id=1599024742]
+
+[node name="BallCountUp" parent="UpgradeCont" unique_id=8494893 instance=ExtResource("3_hk63f")]
+
+[node name="BallMultBlackUp" parent="UpgradeCont" unique_id=622786553 instance=ExtResource("4_vm4s8")]
+
+[node name="BallMultEvenUp" parent="UpgradeCont" unique_id=1857092438 instance=ExtResource("5_2b6yv")]
+
+[node name="BallMultOnOdd" parent="UpgradeCont" unique_id=1732480103 instance=ExtResource("6_cx4d7")]
+
+[node name="BallMultOnRed" parent="UpgradeCont" unique_id=537658847 instance=ExtResource("7_gejbx")]
+
+[node name="BallSpeedUp" parent="UpgradeCont" unique_id=1556971757 instance=ExtResource("8_o05bq")]

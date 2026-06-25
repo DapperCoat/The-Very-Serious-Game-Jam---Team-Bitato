@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cl5a8ijdkx5a7"]
+
+[ext_resource type="Script" uid="uid://ckh4ltp3es7le" path="res://Scripts/Balls/ball_multi_black_up.gd" id="1_8n56y"]
+
+[node name="BallMultBlackUp" type="Node" unique_id=622786553]
+script = ExtResource("1_8n56y")
+upgrade_title = "Multi on Black"

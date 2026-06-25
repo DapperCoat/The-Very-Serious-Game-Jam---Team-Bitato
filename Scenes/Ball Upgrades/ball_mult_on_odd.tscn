@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dp1yn4we2vge5"]
+
+[ext_resource type="Script" uid="uid://vr5y64l0byxu" path="res://Scripts/Balls/ball_multi_odd_up.gd" id="1_myoqo"]
+
+[node name="BallMultOnOdd" type="Node" unique_id=1732480103]
+script = ExtResource("1_myoqo")
+upgrade_title = "Multi on Odd"

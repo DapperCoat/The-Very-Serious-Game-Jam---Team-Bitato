@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://br2ygnayv8pot"]
+
+[ext_resource type="Script" uid="uid://dgyqefhqnwlx2" path="res://Scripts/Balls/ball_speed_up.gd" id="1_rir6i"]
+
+[node name="BallSpeedUp" type="Node" unique_id=1556971757]
+script = ExtResource("1_rir6i")
+upgrade_title = "Ball Speed Up"
