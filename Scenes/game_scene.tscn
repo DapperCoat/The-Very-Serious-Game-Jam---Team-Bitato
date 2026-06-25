@@ -68,4 +68,14 @@ label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="UpgradeNames" type="Label" parent="UI" unique_id=1564076823]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.400002
+anchor_top = 0.8
+anchor_right = -8.0
+anchor_bottom = 15.800001
+offset_left = 6.1035156e-05
+offset_bottom = -6.1035156e-05
+
 [connection signal="send_bet_info" from="UI/BetManager" to="." method="_on_bet_manager_send_bet_info"]
