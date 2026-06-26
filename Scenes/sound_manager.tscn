@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxnxspr7jbi0c"]
+
+[ext_resource type="Script" uid="uid://bakw1qfua3jkh" path="res://Scripts/sound_manager.gd" id="1_32i44"]
+[ext_resource type="AudioStream" uid="uid://bhnmh4t4d7hn0" path="res://Assets/SFX/roulette_spin.wav" id="2_25ke0"]
+
+[node name="SoundManager" type="Node" unique_id=1604166250]
+script = ExtResource("1_32i44")
+
+[node name="WheelSpin" type="AudioStreamPlayer" parent="." unique_id=295608838]
+stream = ExtResource("2_25ke0")

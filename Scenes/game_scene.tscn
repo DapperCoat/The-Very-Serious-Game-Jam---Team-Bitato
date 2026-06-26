@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="3_rgj8m"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="5_7iton"]
 [ext_resource type="Texture2D" uid="uid://bhocwlodh5isa" path="res://Assets/ahoy_maatey.png" id="6_ikfsv"]
+[ext_resource type="PackedScene" uid="uid://bxnxspr7jbi0c" path="res://Scenes/sound_manager.tscn" id="9_ikfsv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font = ExtResource("5_7iton")
@@ -23,10 +24,11 @@ font = ExtResource("5_7iton")
 font_size = 120
 font_color = Color(0.75686276, 0.11764706, 0, 1)
 
-[node name="GameScene" type="Node2D" unique_id=135266820 node_paths=PackedStringArray("chip_manager", "bet_manager")]
+[node name="GameScene" type="Node2D" unique_id=135266820 node_paths=PackedStringArray("chip_manager", "bet_manager", "sound_manager")]
 script = ExtResource("1_fiftr")
 chip_manager = NodePath("ChipManager")
 bet_manager = NodePath("UI/BetManager")
+sound_manager = NodePath("SoundManager")
 
 [node name="UI" type="Control" parent="." unique_id=431137585]
 layout_mode = 3
@@ -113,13 +115,12 @@ vertical_alignment = 1
 [node name="PlaceYourBet" type="Label" parent="UI" unique_id=1926779757]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -23.400002
+anchor_left = -23.800001
 anchor_top = 5.0
-anchor_right = -4.2000003
+anchor_right = -3.8000002
 anchor_bottom = 9.0
-offset_left = 6.1035156e-05
-offset_right = 2.0000153
-text = "Place Your Bet"
+offset_left = -0.99993896
+text = "Place Your Bet!"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -175,5 +176,7 @@ inner_radius = 50.0
 orbit_radius = 130.0
 
 [node name="ChipManager" parent="." unique_id=718549349 instance=ExtResource("2_fiftr")]
+
+[node name="SoundManager" parent="." unique_id=1604166250 instance=ExtResource("9_ikfsv")]
 
 [connection signal="send_bet_info" from="UI/BetManager" to="." method="_on_bet_manager_send_bet_info"]

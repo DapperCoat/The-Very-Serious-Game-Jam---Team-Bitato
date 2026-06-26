@@ -2,6 +2,7 @@ extends Node2D
 
 @export var chip_manager: Node
 @export var bet_manager: Control
+@export var sound_manager: Node
 @onready var house_score: Label = $UI/ChipsToBeatLabel
 @onready var player_score: Label = $UI/PlayerChips
 @onready var balls_left: Label = $UI/BallsLeft
