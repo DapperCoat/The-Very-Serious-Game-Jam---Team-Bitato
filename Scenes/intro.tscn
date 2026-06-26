@@ -3,14 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="1_b226h"]
 [ext_resource type="Script" uid="uid://cw0d7u0rnyxsr" path="res://Scripts/intro.gd" id="1_duh1u"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="2_alxvg"]
+[ext_resource type="Texture2D" uid="uid://dyfb10u1xfth7" path="res://Assets/QuickBG2.png" id="2_geirw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font = ExtResource("2_alxvg")
 font_size = 200
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bbj2o"]
 font = ExtResource("2_alxvg")
 font_size = 33
+font_color = Color(0, 0, 0, 1)
 
 [node name="Intro" type="Node2D" unique_id=1762816506]
 script = ExtResource("1_duh1u")
@@ -23,6 +26,17 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=496847916]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.6
+anchor_top = -0.4
+anchor_right = 48.600002
+anchor_bottom = 28.000002
+offset_right = -0.00012207031
+offset_bottom = -0.00012207031
+texture = ExtResource("2_geirw")
 
 [node name="Title" type="Label" parent="UI" unique_id=7274268]
 layout_mode = 1
