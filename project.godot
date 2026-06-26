@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bitato Spin To Win"
-run/main_scene="uid://wxpfijodrk57"
+run/main_scene="uid://dvapm7kbr404o"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://dvapm7kbr404o"]
 
-[ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="1_b226h"]
 [ext_resource type="Script" uid="uid://cw0d7u0rnyxsr" path="res://Scripts/intro.gd" id="1_duh1u"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="2_alxvg"]
 [ext_resource type="Texture2D" uid="uid://dyfb10u1xfth7" path="res://Assets/QuickBG2.png" id="2_geirw"]
+[ext_resource type="Texture2D" uid="uid://fpj4awvgvs20" path="res://Assets/UiCont.jpg" id="3_rsiac"]
+[ext_resource type="Texture2D" uid="uid://7avfd6tsyihq" path="res://Assets/UIButtonPlayInactive.jpg" id="4_hwjxs"]
+[ext_resource type="Texture2D" uid="uid://dlcrrr3ti0cku" path="res://Assets/UIButtonPlayActive.jpg" id="5_rsiac"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font = ExtResource("2_alxvg")
-font_size = 200
-font_color = Color(0, 0, 0, 1)
+font_size = 125
 
 [sub_resource type="LabelSettings" id="LabelSettings_bbj2o"]
 font = ExtResource("2_alxvg")
 font_size = 33
-font_color = Color(0, 0, 0, 1)
 
 [node name="Intro" type="Node2D" unique_id=1762816506]
 script = ExtResource("1_duh1u")
@@ -38,6 +38,21 @@ offset_right = -0.00012207031
 offset_bottom = -0.00012207031
 texture = ExtResource("2_geirw")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="UI" unique_id=1955968538]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.0000005
+anchor_top = 5.7730002
+anchor_right = 42.032
+anchor_bottom = 13.449
+offset_left = -1.5258789e-05
+offset_top = 307.04922
+offset_right = -1414.0605
+offset_bottom = 127.78351
+rotation = -1.5707964
+scale = Vector2(11.28, 11.28)
+texture = ExtResource("3_rsiac")
+
 [node name="Title" type="Label" parent="UI" unique_id=7274268]
 layout_mode = 1
 anchors_preset = -1
@@ -49,7 +64,7 @@ offset_left = 3.0
 offset_top = -1.5258789e-05
 offset_right = -4.000122
 offset_bottom = -6.1035156e-05
-text = "TITLE HERE"
+text = "PIRATE ROULETTE"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -58,11 +73,13 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 13.000001
-anchor_top = 11.6
+anchor_top = 11.200001
 anchor_right = 35.050003
-anchor_bottom = 13.400001
+anchor_bottom = 13.000001
 offset_left = -6.1035156e-05
+offset_top = -3.0517578e-05
 offset_right = -0.00012207031
+offset_bottom = -6.1035156e-05
 text = "By: GameNSwap, Cyantist, DapperCoat, Spi, and Bee"
 label_settings = SubResource("LabelSettings_bbj2o")
 horizontal_alignment = 1
@@ -71,13 +88,15 @@ vertical_alignment = 1
 [node name="StartGame" type="TextureButton" parent="UI" unique_id=1383745649]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 22.800001
+anchor_left = 20.400002
 anchor_top = 14.200001
-anchor_right = 26.000002
-anchor_bottom = 17.400002
+anchor_right = 27.750002
+anchor_bottom = 19.09
 offset_left = -6.1035156e-05
-offset_right = -0.00012207031
-offset_bottom = -6.1035156e-05
-texture_normal = ExtResource("1_b226h")
+offset_right = 195.99988
+offset_bottom = 130.40002
+scale = Vector2(0.5999976, 0.5999976)
+texture_normal = ExtResource("5_rsiac")
+texture_hover = ExtResource("4_hwjxs")
 
 [connection signal="pressed" from="UI/StartGame" to="." method="_on_start_game_pressed"]
