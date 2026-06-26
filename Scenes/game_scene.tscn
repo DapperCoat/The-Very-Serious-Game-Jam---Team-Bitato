@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dt413y2no3li2" path="res://Scripts/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://d3itjlv44ewb2" path="res://Scenes/chip_manager.tscn" id="2_fiftr"]
 [ext_resource type="PackedScene" uid="uid://dmap0kqdnl13c" path="res://Scenes/rouletteWheel.tscn" id="3_1ixah"]
+[ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="3_rgj8m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font_size = 100
@@ -17,8 +18,15 @@ bet_manager = NodePath("UI/BetManager")
 position = Vector2(0, 168)
 
 [node name="Roulette Wheel" parent="." unique_id=540705528 instance=ExtResource("3_1ixah")]
+visible = false
 position = Vector2(232, 0)
 scale = Vector2(1.2799982, 1.2799982)
+
+[node name="Roulette" parent="." unique_id=2135891266 instance=ExtResource("3_rgj8m")]
+position = Vector2(416, -40)
+num_segments = 16
+inner_radius = 50.0
+orbit_radius = 130.0
 
 [node name="ChipManager" parent="." unique_id=718549349 instance=ExtResource("2_fiftr")]
 
@@ -78,4 +86,14 @@ anchor_bottom = 15.800001
 offset_left = 6.1035156e-05
 offset_bottom = -6.1035156e-05
 
+[node name="SpinButton" type="Button" parent="UI" unique_id=716895479]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 832.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 32
+text = "Spin"
+
 [connection signal="send_bet_info" from="UI/BetManager" to="." method="_on_bet_manager_send_bet_info"]
+[connection signal="pressed" from="UI/SpinButton" to="." method="_on_spin_button_pressed"]
