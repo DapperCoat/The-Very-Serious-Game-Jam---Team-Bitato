@@ -1,9 +1,9 @@
 extends AudioStreamPlayer
 
-# const level_music = preload("")
+const level_music = preload("res://Assets/SFX/Music/Industry3.wav")
 
 # Plays Level Music Globally
-func _play_music(music: AudioStream, volume = -17.0):
+func _play_music(music: AudioStream, volume = -12.0):
 	if stream == music:
 		return
 	else:
@@ -12,9 +12,8 @@ func _play_music(music: AudioStream, volume = -17.0):
 		play()
 
 func play_level_music():
-	pass
-	# _play_music(level_music)
+	_play_music(level_music)
 
 func _on_finished() -> void:
-	pass # Replace with function body.
-	# _play_music(level_music)
+	stream = null
+	_play_music(level_music)

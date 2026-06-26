@@ -26,3 +26,4 @@ func update_chips(bet_won: bool, multi: float) -> void:
 # Raises chips_to_beat based on chip multi and how ever many extra chips the player had over chips_to_beat
 func raise_chips_to_beat() -> void:
 	chips_to_beat = round(chips_to_beat * CHIP_MULTI) + (player_chips - chips_to_beat)
+	player_chips = 10

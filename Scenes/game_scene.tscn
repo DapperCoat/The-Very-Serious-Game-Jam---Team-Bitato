@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dt413y2no3li2" path="res://Scripts/game_scene.gd" id="1_fiftr"]
 [ext_resource type="PackedScene" uid="uid://d3itjlv44ewb2" path="res://Scenes/chip_manager.tscn" id="2_fiftr"]
 [ext_resource type="Texture2D" uid="uid://dbt4dnifr1djg" path="res://Assets/game_bg.png" id="2_rgj8m"]
-[ext_resource type="PackedScene" uid="uid://dmap0kqdnl13c" path="res://Scenes/rouletteWheel.tscn" id="3_1ixah"]
 [ext_resource type="Texture2D" uid="uid://fpj4awvgvs20" path="res://Assets/UiCont.jpg" id="3_2fmhe"]
 [ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="3_rgj8m"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="5_7iton"]
@@ -13,6 +12,16 @@
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font = ExtResource("5_7iton")
 font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_bbj2o"]
+font = ExtResource("5_7iton")
+font_size = 120
+font_color = Color(1, 0.78431374, 0.12941177, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ikfsv"]
+font = ExtResource("5_7iton")
+font_size = 120
+font_color = Color(0.75686276, 0.11764706, 0, 1)
 
 [node name="GameScene" type="Node2D" unique_id=135266820 node_paths=PackedStringArray("chip_manager", "bet_manager")]
 script = ExtResource("1_fiftr")
@@ -35,7 +44,7 @@ anchor_bottom = 18.2
 offset_right = -6.1035156e-05
 texture = ExtResource("2_rgj8m")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="UI" unique_id=1857363667]
+[node name="ScoreCont" type="NinePatchRect" parent="UI" unique_id=1857363667]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -24.6
@@ -47,7 +56,7 @@ offset_bottom = -1035.2908
 scale = Vector2(11.28, 11.28)
 texture = ExtResource("3_2fmhe")
 
-[node name="BetManager" parent="UI" unique_id=2033652603 node_paths=PackedStringArray("chip_manager", "roulette_wheel") instance=ExtResource("1_6h5vk")]
+[node name="BetManager" parent="UI" unique_id=2033652603 node_paths=PackedStringArray("chip_manager") instance=ExtResource("1_6h5vk")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -59,17 +68,15 @@ offset_bottom = -72.0
 grow_horizontal = 1
 grow_vertical = 1
 chip_manager = NodePath("../../ChipManager")
-roulette_wheel = NodePath("../../Roulette Wheel")
 
 [node name="ChipsToBeatLabel" type="Label" parent="UI" unique_id=1160048790]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -22.400002
+anchor_left = -21.6
 anchor_top = -8.0
-anchor_right = -8.0
+anchor_right = -5.9500003
 anchor_bottom = -4.0
-offset_left = 32.00006
-offset_right = 82.0
+offset_right = 1.5258789e-05
 text = "House: XXX"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
@@ -78,26 +85,74 @@ vertical_alignment = 1
 [node name="PlayerChips" type="Label" parent="UI" unique_id=2146253337]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -22.400002
-anchor_top = -3.4
-anchor_right = -8.0
-anchor_bottom = 0.6
-offset_left = 16.000061
-offset_right = 81.0
+anchor_left = -22.000002
+anchor_top = -4.8
+anchor_right = -6.0000005
+anchor_bottom = -0.8
+offset_left = 6.1035156e-05
+offset_right = 1.0000153
 text = "Player: XXX"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpinButton" type="Button" parent="UI" unique_id=716895479]
+[node name="BallsLeft" type="Label" parent="UI" unique_id=889000287]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.000002
+anchor_top = -1.575
+anchor_right = -5.9500003
+anchor_bottom = 2.4250002
+offset_left = 6.1035156e-05
+offset_right = 1.5258789e-05
+text = "Balls Left: X"
+label_settings = SubResource("LabelSettings_11i6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceYourBet" type="Label" parent="UI" unique_id=1926779757]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -23.400002
+anchor_top = 5.0
+anchor_right = -4.2000003
+anchor_bottom = 9.0
+offset_left = 6.1035156e-05
+offset_right = 2.0000153
+text = "Place Your Bet"
+label_settings = SubResource("LabelSettings_11i6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BetWon" type="Label" parent="UI" unique_id=680814386]
 visible = false
-layout_mode = 0
-offset_left = 640.0
-offset_top = 384.0
-offset_right = 832.0
-offset_bottom = 512.0
-theme_override_font_sizes/font_size = 32
-text = "Spin"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -21.6
+anchor_top = 4.5
+anchor_right = -5.5000005
+anchor_bottom = 9.700001
+offset_right = 1.5258789e-05
+offset_bottom = -3.0517578e-05
+text = "BET WON"
+label_settings = SubResource("LabelSettings_bbj2o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BetLost" type="Label" parent="UI" unique_id=1916023375]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -21.6
+anchor_top = 4.5
+anchor_right = -5.175
+anchor_bottom = 9.700001
+offset_right = -13.0
+offset_bottom = -3.0517578e-05
+text = "BET LOST"
+label_settings = SubResource("LabelSettings_ikfsv")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="UI" unique_id=984628407]
 layout_mode = 0
@@ -112,11 +167,6 @@ texture = ExtResource("6_ikfsv")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1149891547]
 position = Vector2(0, 168)
 
-[node name="Roulette Wheel" parent="." unique_id=540705528 instance=ExtResource("3_1ixah")]
-visible = false
-position = Vector2(232, 0)
-scale = Vector2(1.2799982, 1.2799982)
-
 [node name="Roulette" parent="." unique_id=2135891266 instance=ExtResource("3_rgj8m")]
 position = Vector2(416, -40)
 num_segments = 16
@@ -127,4 +177,3 @@ orbit_radius = 130.0
 [node name="ChipManager" parent="." unique_id=718549349 instance=ExtResource("2_fiftr")]
 
 [connection signal="send_bet_info" from="UI/BetManager" to="." method="_on_bet_manager_send_bet_info"]
-[connection signal="pressed" from="UI/SpinButton" to="." method="_on_spin_button_pressed"]
