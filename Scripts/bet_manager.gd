@@ -4,6 +4,7 @@ extends Control
 @export var roulette_wheel: Node2D
 @onready var bet_display = $LabelCont/BetDisplay
 @onready var button_cont = $ButtonCont
+@onready var sound_manager: Node = $SoundManager
 # String is just a placeholder, will have to see how it interacts with wheel & other systems
 var bet_state: String = "none"
 var potential_bet: int = 0
@@ -31,6 +32,7 @@ func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
 # Buttons for selecting type of bet
 # Even Select 
 func _on_even_select_pressed() -> void:
+	sound_manager.play_sound(2)
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
 		print("even bet placed for " + str(potential_bet))
@@ -39,6 +41,7 @@ func _on_even_select_pressed() -> void:
 
 # Red Select
 func _on_red_select_pressed() -> void:
+	sound_manager.play_sound(2)
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
 		print("red bet placed for " + str(potential_bet))
@@ -47,6 +50,7 @@ func _on_red_select_pressed() -> void:
 
 # Black Select
 func _on_black_select_pressed() -> void:
+	sound_manager.play_sound(2)
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
 		print("black bet placed for" + str(potential_bet))
@@ -55,6 +59,7 @@ func _on_black_select_pressed() -> void:
 
 # Odd Select
 func _on_odd_select_pressed() -> void:
+	sound_manager.play_sound(2)
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
 		print("odd bet placed for " + str(potential_bet))
@@ -66,6 +71,7 @@ func _on_minus_button_pressed() -> void:
 	if (potential_bet - 1) < 0:
 		print("Cannot go below 0")
 	else:
+		sound_manager.play_sound(3)
 		potential_bet -= 1
 		bet_display.text = str(potential_bet)
 		
@@ -76,5 +82,6 @@ func _on_plus_button_pressed() -> void:
 	if (potential_bet + 1) > chip_manager.player_chips:
 		print("cannot bet above available chips")
 	else:
+		sound_manager.play_sound(3)
 		potential_bet += 1
 		bet_display.text = str(potential_bet)

@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 func _on_bet_manager_send_bet_info(bet_type: String, bet: int) -> void:
 	_update_scores(true)
 	
+	sound_manager.play_sound(0)
 	roulette_wheel.spin()
 	await get_tree().create_timer(1).timeout
 	roulette_wheel.stop()
@@ -114,6 +115,7 @@ func _update_scores(is_start: bool) -> void:
 	balls_left.text = "Balls Left: " + str(balls)
 
 func _bet_won() -> void:
+	# sound_manager.play_sound(4)
 	place_your_bet.visible = false
 	won_text.visible = true
 	await get_tree().create_timer(2).timeout
@@ -121,6 +123,7 @@ func _bet_won() -> void:
 	place_your_bet.visible = true
 
 func _bet_lost() -> void:
+	sound_manager.play_sound(1)
 	place_your_bet.visible = false
 	lost_text.visible = true
 	await get_tree().create_timer(2).timeout

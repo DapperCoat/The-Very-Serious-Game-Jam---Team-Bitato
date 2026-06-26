@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cw5eelbq7ngr4" path="res://Scripts/bet_manager.gd" id="1_rubdl"]
 [ext_resource type="Texture2D" uid="uid://c4ssyt5w6nr2t" path="res://Assets/topdown_chip.png" id="2_5y0bu"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="3_lka4q"]
+[ext_resource type="PackedScene" uid="uid://bxnxspr7jbi0c" path="res://Scenes/sound_manager.tscn" id="5_lka4q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rubdl"]
 font = ExtResource("3_lka4q")
@@ -130,6 +131,8 @@ offset_right = 795.0
 offset_bottom = 584.0
 toggle_mode = true
 texture_normal = ExtResource("1_6ku8g")
+
+[node name="SoundManager" parent="." unique_id=1604166250 instance=ExtResource("5_lka4q")]
 
 [connection signal="pressed" from="ButtonCont/EvenSelect" to="." method="_on_even_select_pressed"]
 [connection signal="pressed" from="ButtonCont/RedSelect" to="." method="_on_red_select_pressed"]

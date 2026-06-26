@@ -2,9 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bakw1qfua3jkh" path="res://Scripts/sound_manager.gd" id="1_32i44"]
 [ext_resource type="AudioStream" uid="uid://bhnmh4t4d7hn0" path="res://Assets/SFX/roulette_spin.wav" id="2_25ke0"]
+[ext_resource type="AudioStream" uid="uid://ccex5g6wqbu3b" path="res://Assets/SFX/336997__timkahn__boo-01.wav" id="3_1ohty"]
+[ext_resource type="AudioStream" uid="uid://dvyyro11jx58j" path="res://Assets/SFX/win_placeholder.wav" id="4_tox07"]
 
 [node name="SoundManager" type="Node" unique_id=1604166250]
 script = ExtResource("1_32i44")
 
 [node name="WheelSpin" type="AudioStreamPlayer" parent="." unique_id=295608838]
 stream = ExtResource("2_25ke0")
+volume_db = -5.0
+
+[node name="Booing" type="AudioStreamPlayer" parent="." unique_id=1346523303]
+stream = ExtResource("3_1ohty")
+volume_db = -10.0
+
+[node name="Jackpot" type="AudioStreamPlayer" parent="." unique_id=450718399]
+stream = ExtResource("4_tox07")
