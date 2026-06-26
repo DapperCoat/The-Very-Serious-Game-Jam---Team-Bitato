@@ -104,6 +104,7 @@ func _update_scores(is_start: bool) -> void:
 		won_text.visible = false
 		place_your_bet.visible = false
 		lost_text.visible = true
+		sound_manager.play_sound(1)
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 		
@@ -115,7 +116,7 @@ func _update_scores(is_start: bool) -> void:
 	balls_left.text = "Balls Left: " + str(balls)
 
 func _bet_won() -> void:
-	# sound_manager.play_sound(4)
+	sound_manager.play_sound(4)
 	place_your_bet.visible = false
 	won_text.visible = true
 	await get_tree().create_timer(2).timeout

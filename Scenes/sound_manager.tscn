@@ -4,6 +4,8 @@
 [ext_resource type="AudioStream" uid="uid://bhnmh4t4d7hn0" path="res://Assets/SFX/roulette_spin.wav" id="2_25ke0"]
 [ext_resource type="AudioStream" uid="uid://ccex5g6wqbu3b" path="res://Assets/SFX/336997__timkahn__boo-01.wav" id="3_1ohty"]
 [ext_resource type="AudioStream" uid="uid://dvyyro11jx58j" path="res://Assets/SFX/win_placeholder.wav" id="4_tox07"]
+[ext_resource type="AudioStream" uid="uid://dm6c75dh6lfu2" path="res://Assets/SFX/chip_drop.wav" id="5_08tfe"]
+[ext_resource type="AudioStream" uid="uid://bv3hxv72j2y8f" path="res://Assets/SFX/Jackpot.wav" id="6_rc4uc"]
 
 [node name="SoundManager" type="Node" unique_id=1604166250]
 script = ExtResource("1_32i44")
@@ -16,5 +18,14 @@ volume_db = -5.0
 stream = ExtResource("3_1ohty")
 volume_db = -10.0
 
-[node name="Jackpot" type="AudioStreamPlayer" parent="." unique_id=450718399]
+[node name="Chips" type="AudioStreamPlayer" parent="." unique_id=450718399]
 stream = ExtResource("4_tox07")
+volume_db = -15.0
+
+[node name="ChipDrop" type="AudioStreamPlayer" parent="." unique_id=1164677601]
+stream = ExtResource("5_08tfe")
+volume_db = -15.0
+
+[node name="Jackpot" type="AudioStreamPlayer" parent="." unique_id=103578235]
+stream = ExtResource("6_rc4uc")
+volume_db = -7.0

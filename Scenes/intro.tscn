@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fpj4awvgvs20" path="res://Assets/UiCont.jpg" id="3_rsiac"]
 [ext_resource type="Texture2D" uid="uid://7avfd6tsyihq" path="res://Assets/UIButtonPlayInactive.jpg" id="4_hwjxs"]
 [ext_resource type="Texture2D" uid="uid://dlcrrr3ti0cku" path="res://Assets/UIButtonPlayActive.jpg" id="5_rsiac"]
+[ext_resource type="PackedScene" uid="uid://bxnxspr7jbi0c" path="res://Scenes/sound_manager.tscn" id="7_3bmuq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
 font = ExtResource("2_alxvg")
@@ -95,5 +96,7 @@ offset_bottom = 130.40002
 scale = Vector2(0.5999976, 0.5999976)
 texture_normal = ExtResource("5_rsiac")
 texture_hover = ExtResource("4_hwjxs")
+
+[node name="SoundManager" parent="." unique_id=1604166250 instance=ExtResource("7_3bmuq")]
 
 [connection signal="pressed" from="UI/StartGame" to="." method="_on_start_game_pressed"]
