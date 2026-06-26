@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dvapm7kbr404o"]
+
+[ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="1_b226h"]
+[ext_resource type="Script" uid="uid://cw0d7u0rnyxsr" path="res://Scripts/intro.gd" id="1_duh1u"]
+[ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="2_alxvg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
+font = ExtResource("2_alxvg")
+font_size = 200
+
+[sub_resource type="LabelSettings" id="LabelSettings_bbj2o"]
+font = ExtResource("2_alxvg")
+font_size = 33
+
+[node name="Intro" type="Node2D" unique_id=1762816506]
+script = ExtResource("1_duh1u")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=59381323]
+position = Vector2(960, 544)
+
+[node name="UI" type="Control" parent="." unique_id=792640809]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI" unique_id=7274268]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.4
+anchor_top = 5.6000004
+anchor_right = 41.600002
+anchor_bottom = 13.000001
+offset_left = 3.0
+offset_top = -1.5258789e-05
+offset_right = -4.000122
+offset_bottom = -6.1035156e-05
+text = "TITLE HERE"
+label_settings = SubResource("LabelSettings_11i6w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="Label" parent="UI" unique_id=299776666]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.000001
+anchor_top = 11.6
+anchor_right = 35.050003
+anchor_bottom = 13.400001
+offset_left = -6.1035156e-05
+offset_right = -0.00012207031
+text = "By: GameNSwap, Cyantist, DapperCoat, Spi, and Bee"
+label_settings = SubResource("LabelSettings_bbj2o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGame" type="TextureButton" parent="UI" unique_id=1383745649]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 22.800001
+anchor_top = 14.200001
+anchor_right = 26.000002
+anchor_bottom = 17.400002
+offset_left = -6.1035156e-05
+offset_right = -0.00012207031
+offset_bottom = -6.1035156e-05
+texture_normal = ExtResource("1_b226h")
+
+[connection signal="pressed" from="UI/StartGame" to="." method="_on_start_game_pressed"]

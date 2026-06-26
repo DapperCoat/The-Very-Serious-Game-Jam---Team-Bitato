@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://clh51cfaivjq"]
+
+[ext_resource type="Script" uid="uid://c1ony8c51w5at" path="res://Scripts/global_music_player.gd" id="1_hdiv0"]
+
+[node name="GlobalMusicPlayer" type="AudioStreamPlayer" unique_id=1454961136]
+script = ExtResource("1_hdiv0")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

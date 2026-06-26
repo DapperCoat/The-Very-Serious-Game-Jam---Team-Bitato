@@ -31,33 +31,33 @@ func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
 func _on_even_select_pressed() -> void:
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
-		send_bet_info.emit(bet_state, potential_bet)
 		print("even bet placed for " + str(potential_bet))
 		_set_button_disable(true, "even")
+		send_bet_info.emit(bet_state, potential_bet)
 
 # Red Select
 func _on_red_select_pressed() -> void:
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
-		send_bet_info.emit(bet_state, potential_bet)
 		print("red bet placed for " + str(potential_bet))
 		_set_button_disable(true, "red")
+		send_bet_info.emit(bet_state, potential_bet)
 
 # Black Select
 func _on_black_select_pressed() -> void:
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
-		send_bet_info.emit(bet_state, potential_bet)
 		print("black bet placed for" + str(potential_bet))
 		_set_button_disable(true, "black")
+		send_bet_info.emit(bet_state, potential_bet)
 
 # Odd Select
 func _on_odd_select_pressed() -> void:
 	chip_manager.set_bet(potential_bet)
 	if potential_bet != 0:
-		send_bet_info.emit(bet_state, potential_bet)
 		print("odd bet placed for " + str(potential_bet))
 		_set_button_disable(true, "odd")
+		send_bet_info.emit(bet_state, potential_bet)
 
 # removes from potential bet
 func _on_minus_button_pressed() -> void:
