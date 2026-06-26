@@ -39,7 +39,18 @@ func _process(delta: float) -> void:
 
 # Set's wheel_can_spin to true & give wheel the bet_type
 func _on_bet_manager_send_bet_info(bet_type: String, bet: int) -> void:
+	roulette_wheel.spin()
+	await get_tree().create_timer(1).timeout
+	roulette_wheel.stop()
+	var index = roulette_wheel.get_pocket()
+	var value = wheel_values[index]
+	var colour = wheel_colours[value]	
+	print(bet_type)
+	match bet_type:
+		pass
+		
 	_update_scores()
+	bet_manager.bet_state_clear()
 
 # Needs signal from wheel to know if game was win or lose 
 # func _to_be(did_bet_win):
@@ -48,12 +59,3 @@ func _on_bet_manager_send_bet_info(bet_type: String, bet: int) -> void:
 func _update_scores() -> void:
 	house_score.text = "House: %3d" % [chip_manager.chips_to_beat]
 	player_score.text = "Player: %3d" % [chip_manager.player_chips]
-
-
-func _on_spin_button_pressed() -> void:
-	roulette_wheel.spin()
-	roulette_wheel.stop()
-	var index = roulette_wheel.get_pocket()
-	var value = wheel_values[index]
-	var colour = wheel_colours[value]
-	print(value, colour)

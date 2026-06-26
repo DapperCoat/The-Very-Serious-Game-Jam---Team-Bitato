@@ -13,6 +13,6 @@ scale = Vector2(0.884, 0.884)
 texture = ExtResource("2_jc6qf")
 
 [node name="Ball" type="Sprite2D" parent="." unique_id=515465882]
-position = Vector2(72, 168)
+position = Vector2(0, 128)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_lshy5")
