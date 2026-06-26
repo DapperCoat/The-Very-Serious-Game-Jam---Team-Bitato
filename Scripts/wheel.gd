@@ -3,7 +3,7 @@ extends Node2D
 @onready var wheel: Sprite2D = get_node("Wheel")
 
 @export_category("Wheel")
-@export var num_segments: int = 34
+@export var num_segments: int = 16
 @export var outer_radius: float = 180.0
 @export var inner_radius: float = 140.0
 
@@ -32,7 +32,7 @@ func stop():
 	state = STATES.STOPPING
 	
 # Check if a position is on the wheel and returns pocket	
-func get_pocket(global_pos: Vector2) -> int:
+func get_pocket(global_pos: Vector2 = ball.position) -> int:
 	var local = to_local(global_pos)
 	
 	var segment_angle = TAU / num_segments
