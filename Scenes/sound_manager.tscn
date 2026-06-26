@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dvyyro11jx58j" path="res://Assets/SFX/win_placeholder.wav" id="4_tox07"]
 [ext_resource type="AudioStream" uid="uid://dm6c75dh6lfu2" path="res://Assets/SFX/chip_drop.wav" id="5_08tfe"]
 [ext_resource type="AudioStream" uid="uid://bv3hxv72j2y8f" path="res://Assets/SFX/Jackpot.wav" id="6_rc4uc"]
+[ext_resource type="AudioStream" uid="uid://b458ryf4666xd" path="res://Assets/SFX/walktheplank.wav" id="7_rc4uc"]
 
 [node name="SoundManager" type="Node" unique_id=1604166250]
 script = ExtResource("1_32i44")
@@ -29,3 +30,7 @@ volume_db = -15.0
 [node name="Jackpot" type="AudioStreamPlayer" parent="." unique_id=103578235]
 stream = ExtResource("6_rc4uc")
 volume_db = -7.0
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=1475913612]
+stream = ExtResource("7_rc4uc")
+volume_db = -5.0

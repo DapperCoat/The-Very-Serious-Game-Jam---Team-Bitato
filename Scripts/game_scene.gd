@@ -100,11 +100,11 @@ func _update_scores(is_start: bool) -> void:
 		bet_manager.bet_state_clear()
 		balls = 5
 	elif chip_manager.player_chips == 0 or balls == 0:
-		lost_text.text = "No Chips!"
+		lost_text.text = "Walk The\nPlank!"
 		won_text.visible = false
 		place_your_bet.visible = false
 		lost_text.visible = true
-		sound_manager.play_sound(1)
+		sound_manager.play_sound(5)
 		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 		
