@@ -14,7 +14,7 @@ signal send_bet_info(bet_type: String, bet: int)
 # States control what bet the player placed
 # State clear meant to be called by outside script after roulette
 func bet_state_clear() -> void:
-	chip_manager.place_bet(0) 
+	#chip_manager.place_bet(0) 
 	bet_display.text = str(0)
 	_set_button_disable(false, "none")
 
