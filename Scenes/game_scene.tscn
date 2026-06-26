@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dmap0kqdnl13c" path="res://Scenes/rouletteWheel.tscn" id="3_1ixah"]
 [ext_resource type="Texture2D" uid="uid://fpj4awvgvs20" path="res://Assets/UiCont.jpg" id="3_2fmhe"]
 [ext_resource type="PackedScene" uid="uid://bia2je5asj3bf" path="res://Scenes/wheel.tscn" id="3_rgj8m"]
+[ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="5_7iton"]
+[ext_resource type="Texture2D" uid="uid://bhocwlodh5isa" path="res://Assets/ahoy_maatey.png" id="6_ikfsv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_11i6w"]
+font = ExtResource("5_7iton")
 font_size = 100
 
 [node name="GameScene" type="Node2D" unique_id=135266820 node_paths=PackedStringArray("chip_manager", "bet_manager")]
@@ -33,11 +36,14 @@ offset_right = -6.1035156e-05
 texture = ExtResource("2_rgj8m")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="UI" unique_id=1857363667]
-layout_mode = 0
-offset_left = -984.0
-offset_top = -400.0
-offset_right = -908.8227
-offset_bottom = -299.29077
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -24.6
+anchor_top = -10.0
+anchor_right = -3.2
+anchor_bottom = 18.400002
+offset_right = -780.11346
+offset_bottom = -1035.2908
 scale = Vector2(11.28, 11.28)
 texture = ExtResource("3_2fmhe")
 
@@ -46,10 +52,10 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -328.0
-offset_top = 88.0
-offset_right = -328.0
-offset_bottom = 88.0
+offset_left = -144.0
+offset_top = -72.0
+offset_right = -144.0
+offset_bottom = -72.0
 grow_horizontal = 1
 grow_vertical = 1
 chip_manager = NodePath("../../ChipManager")
@@ -62,8 +68,8 @@ anchor_left = -22.400002
 anchor_top = -8.0
 anchor_right = -8.0
 anchor_bottom = -4.0
-offset_left = 64.00006
-offset_right = 64.0
+offset_left = 32.00006
+offset_right = 82.0
 text = "House: XXX"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
@@ -76,23 +82,12 @@ anchor_left = -22.400002
 anchor_top = -3.4
 anchor_right = -8.0
 anchor_bottom = 0.6
-offset_left = 64.00006
-offset_right = 64.0
+offset_left = 16.000061
+offset_right = 81.0
 text = "Player: XXX"
 label_settings = SubResource("LabelSettings_11i6w")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="UpgradeNames" type="Label" parent="UI" unique_id=1564076823]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -22.400002
-anchor_top = 0.8
-anchor_right = -8.0
-anchor_bottom = 15.800001
-offset_left = 64.00006
-offset_right = 64.0
-offset_bottom = -6.1035156e-05
 
 [node name="SpinButton" type="Button" parent="UI" unique_id=716895479]
 visible = false
@@ -103,6 +98,16 @@ offset_right = 832.0
 offset_bottom = 512.0
 theme_override_font_sizes/font_size = 32
 text = "Spin"
+
+[node name="TextureRect2" type="TextureRect" parent="UI" unique_id=984628407]
+layout_mode = 0
+offset_left = -959.99994
+offset_top = 455.99994
+offset_right = -759.99994
+offset_bottom = 655.99994
+rotation = -0.15953037
+scale = Vector2(1.2821134, 1.2821134)
+texture = ExtResource("6_ikfsv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1149891547]
 position = Vector2(0, 168)

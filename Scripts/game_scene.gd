@@ -54,7 +54,7 @@ func _on_bet_manager_send_bet_info(bet_type: String, bet: int) -> void:
 		"black":
 			if colour == bet_type:
 				chip_manager.update_chips(true, 2.0)
-		"black":
+		"red":
 			if colour == bet_type:
 				chip_manager.update_chips(true, 2.0)
 		"green":
@@ -77,3 +77,6 @@ func _on_bet_manager_send_bet_info(bet_type: String, bet: int) -> void:
 func _update_scores() -> void:
 	house_score.text = "House: %3d" % [chip_manager.chips_to_beat]
 	player_score.text = "Player: %3d" % [chip_manager.player_chips]
+	# End Game if player chips == 0
+	if chip_manager.player_chips == 0:
+		pass
