@@ -113,7 +113,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlaceYourBet" type="Label" parent="UI" unique_id=1926779757]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -23.800001
