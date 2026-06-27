@@ -64,9 +64,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = -144.0
-offset_top = -72.0
+offset_top = -14.0
 offset_right = -144.0
-offset_bottom = -72.0
+offset_bottom = -14.0
 grow_horizontal = 1
 grow_vertical = 1
 chip_manager = NodePath("../../ChipManager")
@@ -169,7 +169,8 @@ texture = ExtResource("6_ikfsv")
 position = Vector2(0, 168)
 
 [node name="Roulette" parent="." unique_id=2135891266 instance=ExtResource("3_rgj8m")]
-position = Vector2(416, -40)
+position = Vector2(416, -57)
+scale = Vector2(1.36, 1.36)
 num_segments = 16
 outer_radius = 130.0
 inner_radius = 50.0

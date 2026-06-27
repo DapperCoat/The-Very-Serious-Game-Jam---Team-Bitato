@@ -19,6 +19,9 @@ func bet_state_clear() -> void:
 	chip_manager.set_bet(0) 
 	bet_display.text = str(0)
 	_set_button_disable(false, "none")
+	for child in button_cont.get_children():
+		if child.button_pressed:
+			child.button_pressed = false
 
 #used for quickly changing if buttons are enabled the bet state
 func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
@@ -26,8 +29,6 @@ func _set_button_disable(is_disabled: bool, new_bet_state: String) -> void:
 	print(potential_bet)
 	for child in button_cont.get_children():
 		child.disabled = is_disabled
-		if child.button_pressed:
-			child.button_pressed = false
 
 # Buttons for selecting type of bet
 # Even Select 

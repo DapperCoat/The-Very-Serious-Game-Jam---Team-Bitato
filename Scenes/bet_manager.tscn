@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://cto4atnay10pd"]
 
-[ext_resource type="Texture2D" uid="uid://cpnp83rmnnio2" path="res://icon.svg" id="1_6ku8g"]
 [ext_resource type="Script" uid="uid://cw5eelbq7ngr4" path="res://Scripts/bet_manager.gd" id="1_rubdl"]
 [ext_resource type="Texture2D" uid="uid://c4ssyt5w6nr2t" path="res://Assets/topdown_chip.png" id="2_5y0bu"]
 [ext_resource type="FontFile" uid="uid://bfh3qvucf53mx" path="res://Assets/Fonts/Bodoni MT Black.ttf" id="3_lka4q"]
+[ext_resource type="Texture2D" uid="uid://cqi26q7lqa2jc" path="res://Assets/even_button_inactive.png" id="4_meohl"]
+[ext_resource type="Texture2D" uid="uid://cmhq62jk15yxo" path="res://Assets/even_button.png" id="5_0o4vj"]
 [ext_resource type="PackedScene" uid="uid://bxnxspr7jbi0c" path="res://Scenes/sound_manager.tscn" id="5_lka4q"]
+[ext_resource type="Texture2D" uid="uid://bmhxm7klnlppn" path="res://Assets/red_button_inactive.png" id="5_nd0lk"]
+[ext_resource type="Texture2D" uid="uid://b1bsl21a1c3y4" path="res://Assets/red_button.png" id="6_ms01t"]
+[ext_resource type="Texture2D" uid="uid://cnatervf2ykh5" path="res://Assets/odd_button_inactive.png" id="7_agelh"]
+[ext_resource type="Texture2D" uid="uid://dof7aqndbxjoe" path="res://Assets/down_arrow_inactive.png" id="7_mobaq"]
+[ext_resource type="Texture2D" uid="uid://cmdfp5ue0iix3" path="res://Assets/odd_button.png" id="8_1v1gp"]
+[ext_resource type="Texture2D" uid="uid://c8ew6xoximm7y" path="res://Assets/up_arrow.png" id="8_agelh"]
+[ext_resource type="Texture2D" uid="uid://cssko6ght6xx" path="res://Assets/black_button_inactive.png" id="8_sitwu"]
+[ext_resource type="Texture2D" uid="uid://cgnfkqywem30n" path="res://Assets/up_arrow_inactive.png" id="9_1v1gp"]
+[ext_resource type="Texture2D" uid="uid://ds66cffrjnuy6" path="res://Assets/black_button.png" id="9_c1d2e"]
+[ext_resource type="Texture2D" uid="uid://higjfjq4s8e5" path="res://Assets/down_arrow.png" id="13_0o4vj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rubdl"]
 font = ExtResource("3_lka4q")
@@ -28,11 +39,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect3" type="TextureRect" parent="LabelCont" unique_id=1148278188]
-layout_mode = 0
-offset_left = 440.0
-offset_top = 400.0
-offset_right = 680.0
-offset_bottom = 640.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.000001
+anchor_top = 10.0
+anchor_right = 17.0
+anchor_bottom = 16.0
+offset_left = -3.0517578e-05
 texture = ExtResource("2_5y0bu")
 
 [node name="BetDisplay" type="Label" parent="LabelCont" unique_id=235305230]
@@ -59,78 +72,85 @@ offset_bottom = 40.0
 [node name="EvenSelect" type="TextureButton" parent="ButtonCont" unique_id=798598173]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.208
-anchor_top = 0.45800003
-anchor_right = 0.319
-anchor_bottom = 0.65900004
-offset_left = 231.68
-offset_top = 268.68
-offset_right = 355.24
-offset_bottom = 388.64
+anchor_left = 2.8000002
+anchor_top = 6.8
+anchor_right = 8.8
+anchor_bottom = 10.375001
+offset_right = 1.0
+offset_bottom = -3.0517578e-05
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("4_meohl")
+texture_pressed = ExtResource("5_0o4vj")
+texture_hover = ExtResource("5_0o4vj")
 
 [node name="RedSelect" type="TextureButton" parent="ButtonCont" unique_id=1123435149]
-modulate = Color(0.9938237, 0, 0.22951579, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.356
-anchor_top = 0.45800003
-anchor_right = 0.467
-anchor_bottom = 0.65900004
-offset_left = 395.76
-offset_top = 268.68
-offset_right = 519.32
-offset_bottom = 388.64
+anchor_left = 9.05
+anchor_top = 6.8
+anchor_right = 13.925
+anchor_bottom = 10.35
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("5_nd0lk")
+texture_pressed = ExtResource("6_ms01t")
+texture_hover = ExtResource("6_ms01t")
 
 [node name="BlackSelect" type="TextureButton" parent="ButtonCont" unique_id=1687352053]
-modulate = Color(0.17211533, 0.1721153, 0.1721153, 1)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.45800003
-anchor_right = 0.615
-anchor_bottom = 0.65900004
-offset_left = 561.0
-offset_top = 268.68
-offset_right = 684.4
-offset_bottom = 388.64
+anchor_left = 14.200001
+anchor_top = 6.8
+anchor_right = 19.075
+anchor_bottom = 10.325001
+offset_bottom = -3.0517578e-05
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("8_sitwu")
+texture_pressed = ExtResource("9_c1d2e")
+texture_hover = ExtResource("9_c1d2e")
 
 [node name="OddSelect" type="TextureButton" parent="ButtonCont" unique_id=2046958531]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.652
-anchor_top = 0.45800003
-anchor_right = 0.763
-anchor_bottom = 0.65900004
-offset_left = 724.92
-offset_top = 268.68
-offset_right = 848.48
-offset_bottom = 388.64
+anchor_left = 19.275002
+anchor_top = 6.8
+anchor_right = 25.375002
+anchor_bottom = 10.400001
+offset_left = -6.1035156e-05
+offset_right = -6.1035156e-05
+offset_bottom = -3.0517578e-05
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("7_agelh")
+texture_pressed = ExtResource("8_1v1gp")
+texture_hover = ExtResource("8_1v1gp")
 
 [node name="MinusButton" type="TextureButton" parent="ButtonCont" unique_id=1552625495]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 456.0
-offset_right = 456.0
-offset_bottom = 584.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.200001
+anchor_top = 11.200001
+anchor_right = 11.225
+anchor_bottom = 14.750001
+offset_left = -3.0517578e-05
+offset_top = -3.0517578e-05
+offset_bottom = -6.1035156e-05
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("7_mobaq")
+texture_hover = ExtResource("13_0o4vj")
 
 [node name="PlusButton" type="TextureButton" parent="ButtonCont" unique_id=2096030945]
-layout_mode = 0
-offset_left = 667.0
-offset_top = 456.0
-offset_right = 795.0
-offset_bottom = 584.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.800001
+anchor_top = 11.200001
+anchor_right = 19.800001
+anchor_bottom = 14.800001
+offset_left = -6.1035156e-05
+offset_top = -3.0517578e-05
+offset_right = 0.99993896
+offset_bottom = -6.1035156e-05
 toggle_mode = true
-texture_normal = ExtResource("1_6ku8g")
+texture_normal = ExtResource("9_1v1gp")
+texture_hover = ExtResource("8_agelh")
 
 [node name="SoundManager" parent="." unique_id=1604166250 instance=ExtResource("5_lka4q")]
 
